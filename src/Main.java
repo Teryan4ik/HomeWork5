@@ -1,36 +1,25 @@
-import file.FileData;
-import file.FileData.*;
-import file.FileNavigator;
-import file.FileNavigator.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import static file.FileData.*;
-import static file.FileNavigator.add;
-//import static file.FileNavigator.find;
-import static file.FileNavigator.fileNavigator;
-
 public class Main {
 
 
     public static void main(String[] args) {
 
+        FileData file = new FileData("files.txt", 5, "/path/to/file");
+        FileData file2 = new FileData("Main.txt", 71, "/path/another/");
+        FileData file3 = new FileData("files.txt", 24, "/path/to/file");
+        FileData file4 = new FileData(".gitignore", 55, "/path/another/");
+        FileData file5 = new FileData(".gitignore", 0, "XXXXXX");
 
-        FileData file = new FileData("files.txt", "5", "/path/to/file");
-        FileNavigator navi = new FileNavigator(FileData.fileData);
-        add(FileData.fileData);
-        FileData file2 = new FileData("project.txt", "15", "/path/to/file");
-//        add(FileData.fileData);
+        FileNavigator.add(file);
+        FileNavigator.add(file2);
+        FileNavigator.add(file3);
+        FileNavigator.add(file4);
+        FileNavigator.add(file5);
 
-        add(FileData.fileData);
-//        find();
 
-        System.out.println(file+" file");
-        System.out.println(navi+" navi");
-        System.out.println(FileData.fileData+" fileData");
-        System.out.println(FileNavigator.fileNavigator+"  fileNavigator");
-
+        FileNavigator.filterBySize(100);
+        FileNavigator.find("/path/to/file");
+        FileNavigator.sortBySize();
+        FileNavigator.remove("XXXXXX");
 
     }
 }
