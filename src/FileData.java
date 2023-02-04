@@ -14,25 +14,14 @@ public class FileData {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getSize() {
         return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
     }
 
     public String getPath() {
         return path;
     }
 
-    public void setPath(String path) {
-        this.path = path;
-    }
     @Override
     public String toString() {
         return "Path: " + this.path + ", name: " + this.name + ", size: " + this.size;
